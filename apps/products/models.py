@@ -12,6 +12,7 @@ class Product(models.Model):
     country = models.CharField(max_length=150)
     created_at = models.DateTimeField(auto_created=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category_product')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_product')
 
     def __str__(self):
         return self.title
